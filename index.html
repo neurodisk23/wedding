@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="en" data-theme="gulabi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Harshal &amp; Pooja | Wedding invitation</title>
+  <meta name="description" content="You're invited to the wedding of Harshal and Pooja on Wednesday, 2 December 2026.">
+  <meta name="theme-color" content="#F4DEDC">
+
+  <!-- WhatsApp / social link preview.
+       WhatsApp does not run JavaScript, so these must be typed here.
+       Replace USERNAME and REPO with your GitHub username and repository name (README, step 5). -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Harshal &amp; Pooja | Wedding invitation">
+  <meta property="og:description" content="You're invited! Join us on Wednesday, 2 December 2026.">
+  <meta property="og:url" content="https://USERNAME.github.io/REPO/">
+  <meta property="og:image" content="https://USERNAME.github.io/REPO/assets/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/amita-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="config.js"></script>
+  <script>document.documentElement.dataset.theme = (window.INVITE && INVITE.theme) || "gulabi";</script>
+</head>
+<body>
+  <!-- Cover: guests tap the four dots of the swastik to open the invitation -->
+  <div class="cover" id="cover" role="dialog" aria-modal="true" aria-labelledby="coverTagline">
+    <div class="door door-l" aria-hidden="true"></div>
+    <div class="door door-r" aria-hidden="true"></div>
+    <svg class="jhalar cover-jhalar" data-jhalar="birds" aria-hidden="true"></svg>
+    <div class="cover-inner">
+      <p class="cover-greeting" id="coverGreeting" hidden></p>
+      <p class="cover-tagline" id="coverTagline" data-text="coverTagline">Let's start this beautiful journey together</p>
+      <div class="emblem" id="emblem">
+        <svg class="emblem-ring" id="coverMandala" aria-hidden="true"></svg>
+        <div class="swastik-box">
+          <svg class="swastik" viewBox="0 0 200 200" aria-hidden="true">
+            <path class="sw-gold" d="M150 30 H100 V170 H50 M30 50 V100 H170 V150"/>
+            <path class="sw-red" d="M150 30 H100 V170 H50 M30 50 V100 H170 V150"/>
+          </svg>
+          <button class="dot" type="button" style="left:32.5%;top:32.5%" aria-pressed="false" aria-label="Swastik dot 1 of 4"><span></span></button>
+          <button class="dot" type="button" style="left:67.5%;top:32.5%" aria-pressed="false" aria-label="Swastik dot 2 of 4"><span></span></button>
+          <button class="dot" type="button" style="left:67.5%;top:67.5%" aria-pressed="false" aria-label="Swastik dot 3 of 4"><span></span></button>
+          <button class="dot" type="button" style="left:32.5%;top:67.5%" aria-pressed="false" aria-label="Swastik dot 4 of 4"><span></span></button>
+        </div>
+      </div>
+      <p class="cover-hint" id="coverHint" data-text="coverHint" aria-live="polite">Tap the four dots of the swastik to begin</p>
+      <button class="cover-skip" id="coverSkip" type="button" data-text="coverSkip">Skip</button>
+    </div>
+  </div>
+
+  <a class="skip" href="#rsvp">Skip to RSVP</a>
+
+  <header class="hero" id="top">
+    <svg class="hero-arch" id="heroArch" aria-hidden="true"></svg>
+    <svg class="toran" id="toran" aria-hidden="true" preserveAspectRatio="xMidYMin meet"></svg>
+    <div class="hero-inner">
+      <p class="ganesh" lang="sa" data-text="ganesh">॥ श्री गणेशाय नमः ॥</p>
+      <p class="shubh" lang="hi" data-text="shubhVivah">शुभ विवाह</p>
+      <h1 class="names">
+        <button class="name-tap" type="button" data-shower="groom" aria-describedby="tapHint"><span data-bind="groom.name">Harshal</span></button>
+        <span class="amp" data-text="weds">weds</span>
+        <button class="name-tap" type="button" data-shower="bride" aria-describedby="tapHint"><span data-bind="bride.name">Pooja</span></button>
+      </h1>
+      <img class="divider" src="assets/divider.svg" alt="" width="200" height="24">
+      <p class="greeting" id="greeting" hidden></p>
+      <p class="hero-date" id="heroDate"></p>
+      <p class="tap-hint" id="tapHint" data-text="tapHint">Tap a name or the picture for flowers</p>
+      <button class="btn" id="openBtn" type="button" data-text="openButton">Open invitation</button>
+      <figure class="couple" id="couple" hidden>
+        <button class="couple-tap" type="button" data-shower="both" aria-describedby="tapHint">
+          <img id="coupleImg" alt="Illustration of the bride in a pink lehenga and the groom in an ivory sherwani" width="393" height="640">
+        </button>
+      </figure>
+    </div>
+  </header>
+
+  <main>
+    <section class="invite" id="invitation" aria-label="Invitation" tabindex="-1">
+      <div class="wrap">
+        <div class="framed invite-card has-jhalar">
+          <svg class="jhalar" data-jhalar="gap" aria-hidden="true"></svg>
+          <img class="kalash" src="assets/kalash.svg" alt="" width="62" height="71">
+          <p class="shloka" lang="sa" id="shloka"></p>
+          <img class="divider" src="assets/divider.svg" alt="" width="200" height="24">
+          <p class="lead-in" data-text="blessings">With the blessings of our elders</p>
+          <p class="parents" data-bind="groom.parents"></p>
+          <p data-text="inviteLine">invite you, with joy, to bless the marriage of their son</p>
+          <p class="person" data-bind="groom.fullName"></p>
+          <p class="grand-of" data-text="grandsonOf" data-grand="groom">grandson of</p>
+          <p class="grandparents" data-bind="groom.grandparents" data-grand="groom"></p>
+          <p class="with" data-text="with">with</p>
+          <p class="person" data-bind="bride.fullName"></p>
+          <p data-text="daughterOf">daughter of</p>
+          <p class="parents" data-bind="bride.parents"></p>
+          <p class="grand-of" data-text="granddaughterOf" data-grand="bride">granddaughter of</p>
+          <p class="grandparents" data-bind="bride.grandparents" data-grand="bride"></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="date" id="date" aria-labelledby="dateTitle">
+      <svg class="jhalar jhalar-wide" data-jhalar aria-hidden="true"></svg>
+      <div class="wrap">
+        <h2 class="visually-hidden" id="dateTitle">Wedding date</h2>
+        <div class="medallion">
+          <svg id="mandala" aria-hidden="true"></svg>
+          <div class="medallion-text">
+            <p class="weekday" id="weekday"></p>
+            <p class="big-day" id="dayNum"></p>
+            <p class="month" id="monthYear"></p>
+          </div>
+        </div>
+        <p class="muhurat" id="muhurat"></p>
+        <p class="cd-label" id="cdLabel"></p>
+        <div class="countdown" id="countdown" role="timer" aria-label="Time left until the wedding">
+          <div><span id="cdD">0</span><small>days</small></div>
+          <div><span id="cdH">0</span><small>hours</small></div>
+          <div><span id="cdM">0</span><small>minutes</small></div>
+          <div><span id="cdS">0</span><small>seconds</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="events" id="events" aria-labelledby="eventsTitle">
+      <div class="wrap">
+        <h2 id="eventsTitle" data-text="celebrationsTitle">The celebrations</h2>
+        <img class="divider" src="assets/divider.svg" alt="" width="200" height="24">
+        <ol class="event-list" id="eventList"></ol>
+      </div>
+    </section>
+
+    <section class="rsvp" id="rsvp" aria-labelledby="rsvpTitle">
+      <div class="wrap">
+        <h2 id="rsvpTitle" data-text="rsvpTitle">Will you join us?</h2>
+        <p class="rsvp-by" id="rsvpBy"></p>
+
+        <form class="framed sheet has-jhalar" id="rsvpForm" novalidate>
+          <svg class="jhalar" data-jhalar aria-hidden="true"></svg>
+          <div class="field">
+            <label for="fName" data-text="nameLabel">Your name</label>
+            <input id="fName" name="name" autocomplete="name" maxlength="80" required aria-describedby="eName">
+            <p class="err" id="eName" hidden data-text="errName">Enter your name.</p>
+          </div>
+
+          <div class="field">
+            <label for="fPhone" data-text="phoneLabel">Phone number</label>
+            <div class="phone">
+              <span aria-hidden="true">+91</span>
+              <input id="fPhone" name="phone" type="tel" inputmode="numeric" autocomplete="tel-national"
+                     maxlength="20" placeholder="98765 43210" required aria-describedby="hPhone ePhone">
+            </div>
+            <p class="hint" id="hPhone" data-text="phoneHint">Send again with the same number to update your RSVP.</p>
+            <p class="err" id="ePhone" hidden data-text="errPhone">Enter a 10-digit mobile number.</p>
+          </div>
+
+          <fieldset class="field" aria-describedby="eAttending">
+            <legend data-text="attendLabel">Will you attend?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="attending" value="Yes"><span data-text="attendYes">Yes, we'll be there</span></label>
+              <label class="choice"><input type="radio" name="attending" value="No"><span data-text="attendNo">Sorry, can't make it</span></label>
+            </div>
+            <p class="err" id="eAttending" hidden data-text="errAttending">Choose whether you can attend.</p>
+          </fieldset>
+
+          <div class="if-yes" id="ifYes" hidden>
+            <div class="field">
+              <label for="fGuests" data-text="guestsLabel">How many people, including you?</label>
+              <div class="stepper">
+                <button type="button" data-step="-1" aria-label="One fewer person">−</button>
+                <input id="fGuests" name="guests" type="number" inputmode="numeric" min="1" max="15" value="1">
+                <button type="button" data-step="1" aria-label="One more person">+</button>
+              </div>
+            </div>
+
+            <fieldset class="field" aria-describedby="eEvents">
+              <legend data-text="functionsLabel">Which functions will you attend?</legend>
+              <div class="chips" id="eventChips"></div>
+              <p class="err" id="eEvents" hidden data-text="errFunctions">Choose at least one function.</p>
+            </fieldset>
+          </div>
+
+          <fieldset class="field" aria-describedby="eSide">
+            <legend data-text="sideLabel">Whose side are you from?</legend>
+            <div class="choices">
+              <label class="choice"><input type="radio" name="side" value="Groom"><span><span data-text="sideGroom">Ladke wale</span> <small id="sideGroomNote"></small></span></label>
+              <label class="choice"><input type="radio" name="side" value="Bride"><span><span data-text="sideBride">Ladki wale</span> <small id="sideBrideNote"></small></span></label>
+              <label class="choice"><input type="radio" name="side" value="Both"><span data-text="sideBoth">Both sides</span></label>
+            </div>
+            <p class="err" id="eSide" hidden data-text="errSide">Choose a side.</p>
+          </fieldset>
+
+          <div class="field">
+            <label for="fWish"><span data-text="wishLabel">Your wish for the couple</span> <span class="opt" data-text="optional">(optional)</span></label>
+            <textarea id="fWish" name="wish" rows="4" maxlength="500"></textarea>
+            <label class="check"><input type="checkbox" name="showWish" checked> <span data-text="showWishLabel">Show my wish on this page</span></label>
+          </div>
+
+          <!-- Spam trap: people never see this field; bots fill it. -->
+          <div class="hp" aria-hidden="true">
+            <label>Company <input name="company" tabindex="-1" autocomplete="off"></label>
+          </div>
+
+          <button class="btn" type="submit" id="sendBtn" data-text="sendButton">Send RSVP</button>
+          <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="framed sheet done has-jhalar" id="rsvpDone" tabindex="-1" hidden>
+          <svg class="jhalar" data-jhalar aria-hidden="true"></svg>
+          <img class="kalash" src="assets/kalash.svg" alt="" width="56" height="64">
+          <p class="done-title" id="doneTitle"></p>
+          <p id="doneText"></p>
+          <p class="demo-note" id="demoNote" hidden>Demo mode: this RSVP was not saved. Add your Google Sheet link in config.js to start collecting RSVPs.</p>
+          <button class="link-btn" type="button" id="editBtn">Update your RSVP</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="wishes" id="wishes" aria-labelledby="wishesTitle">
+      <div class="wrap">
+        <h2 id="wishesTitle" data-text="wishesTitle">Wishes for the couple</h2>
+        <img class="divider" src="assets/divider.svg" alt="" width="200" height="24">
+        <p class="wishes-note" id="wishesNote" hidden></p>
+        <ul class="wish-list" id="wishList"></ul>
+        <p class="empty" id="wishEmpty" hidden>No wishes yet. Add the first one with your RSVP.</p>
+      </div>
+    </section>
+
+    <section class="contacts" id="contacts" aria-labelledby="contactsTitle">
+      <div class="wrap">
+        <h2 id="contactsTitle" data-text="contactsTitle">Questions? Call us</h2>
+        <div class="framed contact-card has-jhalar">
+          <svg class="jhalar" data-jhalar aria-hidden="true"></svg>
+          <ul class="contact-list" id="contactList"></ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <svg class="palace" id="palace" aria-hidden="true" preserveAspectRatio="xMidYMax meet"></svg>
+    <div class="footer-body">
+      <div class="wrap">
+        <p class="thanks" data-text="thanks">We look forward to celebrating with you</p>
+        <p class="hashtag" id="hashtag"></p>
+        <p class="families" id="families"></p>
+      </div>
+    </div>
+  </footer>
+
+  <button class="music" id="musicBtn" type="button" aria-pressed="false" aria-label="Play music" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path class="note" d="M9 18.5a2.5 2.5 0 1 1-2-2.45V5l11-2v11.5a2.5 2.5 0 1 1-2-2.45V6.4L9 7.7z"/><path class="slash" d="M3 3l18 18" /></svg>
+  </button>
+  <audio id="music" loop preload="none"></audio>
+
+  <script src="js/toran.js"></script>
+  <script src="js/ornaments.js"></script>
+  <script src="js/effects.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 26">
+  <!-- Gold lotus divider -->
+  <g fill="none" stroke="#B08A4A">
+    <path d="M4 15 H86 M134 15 H216" stroke-width=".9"/>
+    <path d="M30 18 H86 M134 18 H190" stroke-width=".5"/>
+  </g>
+  <g fill="#B08A4A">
+    <path d="M0 15 l4 -3 l4 3 l-4 3Z"/><path d="M212 15 l4 -3 l4 3 l-4 3Z"/>
+    <circle cx="92" cy="15" r="1.6"/><circle cx="128" cy="15" r="1.6"/>
+  </g>
+  <g transform="translate(110 21)">
+    <path d="M0 -20 C5 -14 5 -6 0 0 C-5 -6 -5 -14 0 -20Z" fill="#E9B7C1" stroke="#B08A4A" stroke-width=".8"/>
+    <path d="M0 -20 C5 -14 5 -6 0 0 C-5 -6 -5 -14 0 -20Z" transform="rotate(-38)" fill="#F4D3D8" stroke="#B08A4A" stroke-width=".8"/>
+    <path d="M0 -20 C5 -14 5 -6 0 0 C-5 -6 -5 -14 0 -20Z" transform="rotate(38)" fill="#F4D3D8" stroke="#B08A4A" stroke-width=".8"/>
+    <path d="M0 -14 C4 -10 4 -4 0 0 C-4 -4 -4 -10 0 -14Z" transform="rotate(-72)" fill="#FBEAEC" stroke="#B08A4A" stroke-width=".7"/>
+    <path d="M0 -14 C4 -10 4 -4 0 0 C-4 -4 -4 -10 0 -14Z" transform="rotate(72)" fill="#FBEAEC" stroke="#B08A4A" stroke-width=".7"/>
+  </g>
+</svg>

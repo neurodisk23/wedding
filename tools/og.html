@@ -1,0 +1,47 @@
+<!doctype html>
+<!--
+  Source for assets/og-image.jpg (the WhatsApp link preview).
+  To remake it after changing names, date, theme or illustration:
+  open this page in Chrome, set the window to 1200 x 630
+  (DevTools device toolbar), take a screenshot, save as JPG under 300 KB.
+-->
+<html lang="en" data-theme="gulabi">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../css/style.css">
+<script src="../config.js"></script>
+<script>document.documentElement.dataset.theme = (window.INVITE && INVITE.theme) || "gulabi";</script>
+<style>
+  html, body { margin: 0; width: 1200px; height: 630px; overflow: hidden; }
+  .toran { position: absolute; top: 0; left: 0; width: 1200px; height: 150px; z-index: 3; }
+  .og-arch { position: absolute; left: 70px; top: 112px; width: 400px; height: 506px; }
+  .og-couple { position: absolute; left: 270px; bottom: 16px; height: 400px; transform: translateX(-50%); z-index: 2; }
+  .og-text { position: absolute; left: 500px; right: 40px; top: 150px; bottom: 30px;
+             display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; }
+  .og-text .shubh { font-size: 40px; }
+  .og-text .names { font-size: 104px; line-height: 1.02; margin: 4px 0 0; }
+  .og-text .names .amp { font-size: 34px; margin: 0; }
+  .og-text .divider { width: 230px; margin: 14px auto 10px; }
+  .og-text .when { font-size: 32px; }
+  .og-text .invited { font: italic 28px/1.4 var(--text); color: var(--gold-text); margin-top: 4px; }
+</style>
+</head>
+<body>
+  <svg class="toran" id="toran" aria-hidden="true"></svg>
+  <svg class="og-arch" id="arch" aria-hidden="true"></svg>
+  <img class="og-couple" src="../assets/couple.webp" alt="">
+  <div class="og-text">
+    <p class="shubh" lang="hi">शुभ विवाह</p>
+    <p class="names"><span>Harshal</span><span class="amp">weds</span><span>Pooja</span></p>
+    <img class="divider" src="../assets/divider.svg" alt="">
+    <p class="when">Wednesday, 2 December 2026</p>
+    <p class="invited">You're invited</p>
+  </div>
+  <script src="../js/toran.js"></script>
+  <script src="../js/ornaments.js"></script>
+  <script>
+    buildToran(document.getElementById("toran"), { width: 1200 });
+    buildArch(document.getElementById("arch"), 400, 506);
+  </script>
+</body>
+</html>

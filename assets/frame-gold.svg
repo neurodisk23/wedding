@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120">
+  <!-- Gold card frame used as a CSS border-image (slice 40). Corners keep their shape; edges stretch. -->
+  <defs>
+    <g id="corner" fill="none" stroke="#B08A4A">
+      <path d="M8 36 C8 20 20 8 36 8" stroke-width="1"/>
+      <path d="M14 36 C14 24 24 14 36 14" stroke-width=".6"/>
+      <g transform="translate(17 17) rotate(45)" fill="#C9A55E" stroke="none">
+        <ellipse rx="1.7" ry="4.2"/>
+        <ellipse rx="1.7" ry="4.2" transform="rotate(90)"/>
+        <circle r="1.6" fill="#8C6A2F"/>
+      </g>
+      <circle cx="36" cy="8" r="1.4" fill="#B08A4A" stroke="none"/>
+      <circle cx="8" cy="36" r="1.4" fill="#B08A4A" stroke="none"/>
+    </g>
+  </defs>
+  <rect x="3" y="3" width="114" height="114" fill="none" stroke="#B08A4A" stroke-width="1.4"/>
+  <rect x="8" y="8" width="104" height="104" fill="none" stroke="#B08A4A" stroke-width=".6"/>
+  <use href="#corner"/>
+  <use href="#corner" transform="translate(120 0) scale(-1 1)"/>
+  <use href="#corner" transform="translate(0 120) scale(1 -1)"/>
+  <use href="#corner" transform="translate(120 120) scale(-1 -1)"/>
+</svg>
