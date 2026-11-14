@@ -47,6 +47,54 @@
   function names(str) { return str.replace(/\{groom\}/g, C.groom.name).replace(/\{bride\}/g, C.bride.name); }
   $("sideGroomNote").textContent = names(T.sideGroomNote || "({groom}'s side)");
   $("sideBrideNote").textContent = names(T.sideBrideNote || "({bride}'s side)");
+  /* ───── Family blocks (config.js > familyBlocks): three columns between the RSVP and the wishes ───── */
+  var blocks = (C.familyBlocks || []).filter(function (b) { return b && (b.title || (b.lines || []).length); });
+  if (blocks.length) {
+    if (!document.querySelector('link[href$="family.css"]')) {
+      var css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "css/family.css";
+      document.head.appendChild(css);
+    }
+    var fam = document.createElement("section");
+    fam.className = "family";
+    fam.id = "family";
+    fam.setAttribute("aria-label", T.familyLabel || "With love from the family");
+    fam.innerHTML = '<div class="wrap"><div class="framed family-card has-jhalar">' +
+      '<svg class="jhalar" data-jhalar aria-hidden="true"></svg><div class="family-cols"></div></div></div>';
+    var cols = fam.querySelector(".family-cols");
+    cols.style.setProperty("--cols", Math.min(blocks.length, 3));
+    blocks.forEach(function (b) {
+      var col = document.createElement("div");
+      col.className = "family-col";
+      if (b.title) { var h = document.createElement("h3"); h.textContent = b.title; col.appendChild(h); }
+      (b.lines || []).forEach(function (line) {
+        var p = document.createElement("p");
+        p.textContent = line;
+        col.appendChild(p);
+      });
+      cols.appendChild(col);
+    });
+    $("wishes").parentNode.insertBefore(fam, $("wishes"));
+  }
+  // Keep each family line (e.g. "Shri Pradeep Kumar Verma") on one line when a
+  // small shrink is enough; otherwise let it wrap normally.
+  function fitFamilyLines() {
+    document.querySelectorAll(".family-col p").forEach(function (p) {
+      p.style.fontSize = "";
+      p.style.whiteSpace = "nowrap";
+      var avail = p.clientWidth, need = p.scrollWidth;
+      if (!avail || need <= avail) return;
+      var size = parseFloat(getComputedStyle(p).fontSize) * avail / need;
+      if (size >= 11.5) p.style.fontSize = (Math.floor(size * 10) / 10) + "px";
+      else p.style.whiteSpace = "";
+    });
+  }
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(fitFamilyLines);
+
+  // "Whose side are you from?" can be switched off with  askSide: false  in config.js.
+  var askSide = C.askSide !== false;
+  if (!askSide) $("eSide").closest("fieldset").hidden = true;
 
   var wedding = new Date(C.weddingDate);
   $("heroDate").textContent = fmt(wedding, { weekday: "long", day: "numeric", month: "long", year: "numeric" });
@@ -142,6 +190,7 @@
     drawToran();
     drawJhalar();
     drawPalace();
+    fitFamilyLines();
   });
   // The opening-screen entrance (garland drops in, names rise) runs when the cover opens: see Cover below.
   var heroEntered = false;
@@ -213,6 +262,7 @@
     window.scrollTo(0, 0);
     drawJhalar();
     drawPalace();
+    fitFamilyLines();
     if (target) $(target).scrollIntoView();
     $("invitation").focus({ preventScroll: true });
   }
@@ -523,7 +573,7 @@
     if (showErr("ePhone", !/^[6-9]\d{9}$/.test(d.phone), $("fPhone"))) bad.push($("fPhone"));
     if (showErr("eAttending", !d.attending)) bad.push(form.querySelector("[name=attending]"));
     if (showErr("eEvents", d.attending === "Yes" && !d.events.length)) bad.push(form.querySelector("[name=events]"));
-    if (showErr("eSide", !d.side)) bad.push(form.querySelector("[name=side]"));
+    if (askSide && showErr("eSide", !d.side)) bad.push(form.querySelector("[name=side]"));
     return bad;
   }
 
