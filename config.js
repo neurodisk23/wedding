@@ -30,6 +30,10 @@ window.INVITE = {
   // Set to false to skip straight to the invitation.
   cover: true,
 
+  // Ask "Whose side are you from?" (Ladke wale / Ladki wale) in the RSVP form.
+  // Set to false to remove that question.
+  askSide: false,
+
   // Flower showers on the opening screen: tapping a name drops that
   // person's flowers; tapping the picture drops both.
   // Kinds: "rose" (red & pink petals), "marigold" (yellow & orange genda),
@@ -130,6 +134,15 @@ window.INVITE = {
   hashtag: "#HarshalWedsPooja",
   families: "With love, the Verma family",
 
+  // Family blocks shown side by side between the RSVP and the wishes
+  // (like the signature row of a printed card). Each block has a title and
+  // its lines. Use familyBlocks: [] to hide the section.
+  familyBlocks: [
+    { title: "Eagerly Awaiting",     lines: ["Kum. Lalita Rani Verma,", "Shri Sandeep Verma", "& the entire Verma family"] },
+    { title: "With Warm Regards",    lines: ["Smt. Nidhi &", "Shri Pradeep Kumar Verma", "Harshita Verma (sister)"] },
+    { title: "Eager to Welcome You", lines: ["Shri Satyanarayan Paigwar (maternal grandfather)", "Shri Gaurav Paigwar (maternal uncle)"] },
+  ],
+
   // Wording guests see. Change any line here; keep the quotes and the comma.
   // Write \n inside a line to start a new line exactly there.
   // (Hindi or Marathi is fine too, e.g. weds: "संग".)
@@ -204,5 +217,7 @@ window.INVITE = {
 
   // Paste the Google Apps Script web-app URL here (README, step 3).
   // While it is "", the form runs in demo mode and saves nothing.
-  rsvpEndpoint: "https://script.google.com/macros/s/AKfycbzIigIh-pN2ZZ5gMgNYlGiDG01yxbBh-beHuEqzyF3ZUK_-O8kA2EAU7PLsPUoXS5wh/exec",
+  // >>> REPLACE the text in quotes with YOUR link (copy it from your current
+  // >>> config.js on GitHub, or Apps Script > Deploy > Manage deployments).
+  rsvpEndpoint: "PASTE_YOUR_WEB_APP_URL_HERE",
 };
