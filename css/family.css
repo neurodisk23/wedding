@@ -1,0 +1,43 @@
+/*
+ * Family blocks between the RSVP and the wishes, like the signature row of a
+ * printed card: two side by side, an odd last one centred underneath. Content comes from
+ * config.js > familyBlocks; js/main.js builds the section and loads this file.
+ */
+.family { padding-top: 8px; padding-bottom: 24px; }
+/* A little wider than the other cards, so names fit on one line in two columns */
+.family .wrap { padding-inline: 6px; }
+.family-card { --frame: 16px; padding: 0 0 16px; }
+/* Two blocks per row; with an odd number, the last one sits centred across
+   the full width underneath (e.g. "Eager to Welcome You" below the other two). */
+.family-cols {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  text-align: center;
+}
+.family-col { padding: 0 4px; }
+.family-col:nth-child(even) { border-left: 1px solid var(--gold-light); }
+.family-col:nth-child(n+3) { border-top: 1px solid var(--gold-light); margin-top: 14px; padding-top: 14px; }
+.family-col:nth-child(odd):last-child { grid-column: 1 / -1; }
+.family-col:only-child { border-top: 0; margin-top: 0; padding-top: 0; }
+.family-col h3 {
+  font: 700 18px/1.25 var(--display);
+  color: var(--accent);
+  margin: 0 0 8px;
+}
+/* js/main.js shrinks a line slightly (never below 11.5px) when that keeps it on one line */
+.family-col p { margin: 0; font-size: 13.5px; line-height: 1.45; overflow-wrap: break-word; }
+.family-col p + p { margin-top: 6px; }
+
+@media (min-width: 600px) {
+  .family .wrap { max-width: 640px; padding-inline: 24px; }
+  .family-card { --frame: 34px; }
+  .family-col { padding: 0 14px; }
+  .family-col h3 { font-size: 22px; }
+  .family-col p { font-size: 16px; }
+}
+/* Very narrow phones: stack the blocks */
+@media (max-width: 340px) {
+  .family-cols { grid-template-columns: 1fr; }
+  .family-col:nth-child(even) { border-left: 0; }
+  .family-col + .family-col { border-top: 1px solid var(--gold-light); margin-top: 12px; padding-top: 12px; }
+}
