@@ -52,7 +52,7 @@ window.INVITE = {
     fullName: "Pooja",
     parents: "Smt. Manisha Verma &\nShri Dinesh Chandra Verma",
     // Shown under the bride's parents ("granddaughter of …"). Use "" to hide.
-    grandparents: "Late Sh. Kedar Nath Verma &\nLate Smt. Gulabiya Verma",
+    grandparents: "Late Sh. Kedar Nath Verma &\nLate Smt. Gulabiya Bai Verma",
   },
 
   // Wedding muhurat. Drives the big date and the countdown.
@@ -108,7 +108,7 @@ window.INVITE = {
       venue: "Abhinandan Palace, Mopka",
       address: "Bilaspur, Chattisgarh",
       mapUrl: "https://maps.app.goo.gl/Vz53Rop737uh5DsV8",
-      note: "Let's start this new phase of life with the richness of joy, happiness and alot of smiles.",
+      note: "Dress festive and bring your best dance moves as the baraat sets out with music and blessings.",
     },
     {
       name: "Phere",
