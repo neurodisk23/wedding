@@ -219,5 +219,5 @@ window.INVITE = {
   // While it is "", the form runs in demo mode and saves nothing.
   // >>> REPLACE the text in quotes with YOUR link (copy it from your current
   // >>> config.js on GitHub, or Apps Script > Deploy > Manage deployments).
-  rsvpEndpoint: "PASTE_YOUR_WEB_APP_URL_HERE",
+  rsvpEndpoint: "https://script.google.com/macros/s/AKfycbzIigIh-pN2ZZ5gMgNYlGiDG01yxbBh-beHuEqzyF3ZUK_-O8kA2EAU7PLsPUoXS5wh/exec",
 };
