@@ -43,7 +43,7 @@ window.INVITE = {
   groom: {
     name: "Harshal",
     fullName: "Harshal",
-    parents: "Smt. Nidhi Verma &\nShri Perdeep Kumar Verma",
+    parents: "Smt. Nidhi Verma &\nShri Pradeep Kumar Verma",
     // Shown under the groom's name ("grandson of …"). Use "" to hide.
     grandparents: "Late Sh. Satpal Verma &\nLate Smt. Bimla Devi",
   },
@@ -127,7 +127,7 @@ window.INVITE = {
 
   // Family contacts. phone = country code + number, digits only.
   contacts: [
-    { name: "Shri Perdeep Verma", relation: "Groom's father", phone: "919086323132" },
+    { name: "Shri Pradeep Verma", relation: "Groom's father", phone: "919086323132" },
     { name: "Smt. Nidhi Verma", relation: "Groom's mother", phone: "917006800850" },
   ],
 
