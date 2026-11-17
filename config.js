@@ -127,7 +127,7 @@ window.INVITE = {
 
   // Family contacts. phone = country code + number, digits only.
   contacts: [
-    { name: "Shri Pradeep Verma", relation: "Groom's father", phone: "919086323132" },
+    { name: "Shri Perdeep Verma", relation: "Groom's father", phone: "919086323132" },
     { name: "Smt. Nidhi Verma", relation: "Groom's mother", phone: "917006800850" },
   ],
 
